@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  mygcc:
+    build: ./
+    volumes:
+      - ../:/mnt
+    tty: true
+    working_dir: /mnt/CordingAndBuild
+    cap_add:
+      - SYS_PTRACE
+    security_opt:
+      - seccomp:unconfined
